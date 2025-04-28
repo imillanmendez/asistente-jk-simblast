@@ -1,92 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistente JK Simblast</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: url('https://imillanmendez.github.io/asistente-jk-simblast/fondo.jpg') no-repeat right center;
-            background-size: auto 90%; /* Alto 90% de la pantalla, ancho automático */
-            background-color: #e0f7fa; /* Color de fondo de la página */
-        }
-        h1 {
-            color: #004d40;
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #00695c;
-            font-size: 28px;
-            margin-top: 40px;
-        }
-        p {
-            color: #00796b;
-            font-size: 18px;
-            margin: 20px auto;
-            max-width: 700px;
-            background: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente para los textos */
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            font-size: 20px;
-            border-radius: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        .footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente JK Simblast</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      position: relative; /* Para posicionar el feedback absolute respecto al body */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: url('https://imillanmendez.github.io/asistente-jk-simblast/fondo.jpg') no-repeat right center;
+      background-size: auto 90%;
+      background-color: #e0f7fa;
+      box-sizing: border-box;
+    }
+    h1 {
+      color: #004d40;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #00695c;
+      font-size: 28px;
+      margin-top: 40px;
+    }
+    p {
+      color: #00796b;
+      font-size: 18px;
+      margin: 20px auto;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
 
-    <!-- Microsoft Clarity tracking script -->
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "rbajkaflt8");
-    </script>
+    /* Estilos para la caja de feedback */
+    .feedback {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      width: 350px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-align: left;
+    }
+    .feedback h2 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #004d40;
+    }
+    .feedback p {
+      margin: 10px 0;
+      max-width: none;
+    }
+    .feedback iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      border-radius: 6px;
+    }
+  </style>
+
+  <!-- Microsoft Clarity tracking script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "rbajkaflt8");
+  </script>
 </head>
 <body>
 
-    <h1>Bienvenido al Asistente JK Simblast</h1>
+  <h1>Bienvenido al Asistente JK Simblast</h1>
 
-    <h2>¿Qué aprenderás aquí?</h2>
-    <p>
-        Este asistente te ayudará a comprender y utilizar correctamente los módulos 2D Bench (cielo abierto) y 2D Face (mina subterránea) de JK Simblast.
-        Podrás resolver dudas técnicas, recibir guías paso a paso, y acceder a explicaciones de conceptos clave de voladuras y diseños de tronadura.
-    </p>
+  <h2>¿Qué aprenderás aquí?</h2>
+  <p>
+    Este asistente te ayudará a comprender y utilizar correctamente los módulos 2D Bench (cielo abierto) y 2D Face (mina subterránea) de JK Simblast.
+    Podrás resolver dudas técnicas, recibir guías paso a paso, y acceder a explicaciones de conceptos clave de voladuras y diseños de tronadura.
+  </p>
 
-    <a href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast" target="_blank" class="button">
-        Acceder al Asistente
-    </a>
+  <a href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast" target="_blank" class="button">
+    Acceder al Asistente
+  </a>
 
-    <!-- Sección de feedback -->
-    <h2>Déjame tu feedback</h2>
-    <p>Tu opinión es muy valiosa para seguir mejorando el Asistente.</p>
+  <!-- Caja de feedback en la esquina inferior izquierda -->
+  <div class="feedback">
+    <h2>Tu feedback</h2>
+    <p>Tu opinión es muy valiosa para seguir mejorando:</p>
     <iframe 
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u" 
-        width="100%" height="500" frameborder="0" marginwidth="0" marginheight="0" 
-        style="border: none; max-width:100%; max-height:100vh;" allowfullscreen>
+      src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u" 
+      allowfullscreen>
     </iframe>
+  </div>
 
-    <p class="footer">Creado por Ignacio Millán – Especialista en Minería y Educación Digital</p>
+  <p class="footer">Creado por Ignacio Millán – Especialista en Minería y Educación Digital</p>
 
 </body>
 </html>
