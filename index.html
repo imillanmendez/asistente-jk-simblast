@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Asistente JK Simblast</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
-      --color-bg: #f4f7fa;
+      --color-bg: #eef2f8; /* Nuevo fondo */
       --color-card: rgba(255,255,255,0.95);
       --color-primary: #007bff;
       --color-accent: #00695c;
@@ -18,9 +21,13 @@
       --radius: 12px;
       --shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    * { box-sizing: border-box; margin:0; padding:0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: "Open Sans", sans-serif;
       background: var(--color-bg);
       color: var(--color-text);
       min-height: 100vh;
@@ -37,6 +44,8 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
     .hero {
       display: flex;
@@ -76,14 +85,15 @@
     }
     .hero-image {
       flex: 1 1 300px;
-      background: url('https://imillanmendez.github.io/asistente-jk-simblast/fondo.jpg') no-repeat center center;
+      background: url("https://imillanmendez.github.io/asistente-jk-simblast/fondo.jpg")
+        no-repeat center center;
       background-size: contain;
       min-height: 300px;
     }
     .feedback {
       position: absolute;
       bottom: 20px;
-      left: 20px;
+      right: 20px; /* Form al lado derecho */
       width: 300px;
       background: white;
       padding: 15px;
@@ -103,25 +113,29 @@
       border-radius: 6px;
     }
     .footer {
+      margin-top: auto; /* Empuja al pie abajo */
       text-align: center;
       padding: 20px;
       font-size: 0.8rem;
       color: #666;
-      background: var(--color-bg);
     }
   </style>
 
-  <!-- Clarity -->
+  <!-- Microsoft Clarity -->
   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "rbajkaflt8");
   </script>
 </head>
 <body>
-
   <div class="container">
     <div class="hero">
       <div class="hero-text">
@@ -130,8 +144,11 @@
         <p>
           Este asistente te guía paso a paso en 2D Bench (cielo abierto) y 2D Face (mina subterránea). Resuelve tus dudas, interpreta resultados y mejora tus diseños de tronadura.
         </p>
-        <a href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast"
-           target="_blank" class="button">
+        <a
+          href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast"
+          target="_blank"
+          class="button"
+        >
           Acceder al Asistente
         </a>
       </div>
@@ -140,15 +157,15 @@
 
     <div class="feedback">
       <h2>Tu feedback</h2>
-      <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u"
-              allowfullscreen>
-      </iframe>
+      <iframe
+        src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="footer">
+      Creado por Ignacio Millán – Especialista en Minería y Educación Digital
     </div>
   </div>
-
-  <div class="footer">
-    Creado por Ignacio Millán – Especialista en Minería y Educación Digital
-  </div>
-
 </body>
 </html>
