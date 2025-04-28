@@ -13,7 +13,7 @@
 
   <style>
     :root {
-      --color-bg: #eef2f8; /* Nuevo fondo */
+      --color-bg: #eef2f8;
       --color-card: rgba(255,255,255,0.95);
       --color-primary: #007bff;
       --color-accent: #00695c;
@@ -43,7 +43,6 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       overflow: hidden;
-      position: relative;
       display: flex;
       flex-direction: column;
     }
@@ -91,29 +90,31 @@
       min-height: 300px;
     }
     .feedback {
-      position: absolute;
-      bottom: 20px;
-      right: 20px; /* Form al lado derecho */
-      width: 300px;
+      margin: 20px auto;
+      width: calc(100% - 40px);
+      max-width: 960px;
       background: white;
-      padding: 15px;
+      padding: 20px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      font-size: 0.9rem;
       text-align: left;
     }
     .feedback h2 {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: var(--color-accent);
+      font-size: 1.25rem;
+    }
+    .feedback p {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
     .feedback iframe {
       width: 100%;
-      height: 200px;
+      height: 300px;
       border: none;
       border-radius: 6px;
     }
     .footer {
-      margin-top: auto; /* Empuja al pie abajo */
       text-align: center;
       padding: 20px;
       font-size: 0.8rem;
@@ -142,7 +143,9 @@
         <h1>Bienvenido al Asistente JK Simblast</h1>
         <h2>¿Qué aprenderás aquí?</h2>
         <p>
-          Este asistente te guía paso a paso en 2D Bench (cielo abierto) y 2D Face (mina subterránea). Resuelve tus dudas, interpreta resultados y mejora tus diseños de tronadura.
+          Este asistente te guía paso a paso en 2D Bench (cielo abierto) y 2D Face
+          (mina subterránea). Resuelve tus dudas, interpreta resultados y mejora
+          tus diseños de tronadura.
         </p>
         <a
           href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast"
@@ -156,7 +159,8 @@
     </div>
 
     <div class="feedback">
-      <h2>Tu feedback</h2>
+      <h2>Déjame tu feedback</h2>
+      <p>Tu opinión es muy valiosa para seguir mejorando el Asistente:</p>
       <iframe
         src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u"
         allowfullscreen
