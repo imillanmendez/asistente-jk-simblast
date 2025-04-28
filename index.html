@@ -2,94 +2,116 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Asistente JK Simblast</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
+    :root {
+      --color-bg: #f4f7fa;
+      --color-card: rgba(255,255,255,0.95);
+      --color-primary: #007bff;
+      --color-accent: #00695c;
+      --color-text: #333;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      position: relative; /* Para posicionar el feedback absolute respecto al body */
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background: url('https://imillanmendez.github.io/asistente-jk-simblast/fondo.jpg') no-repeat right center;
-      background-size: auto 90%;
-      background-color: #e0f7fa;
-      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
-    h1 {
-      color: #004d40;
-      font-size: 40px;
+    .container {
+      background: var(--color-card);
+      max-width: 1000px;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+      padding: 40px;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: var(--color-primary);
       margin-bottom: 10px;
     }
-    h2 {
-      color: #00695c;
-      font-size: 28px;
-      margin-top: 40px;
+    .hero-text h2 {
+      font-size: 1.75rem;
+      color: var(--color-accent);
+      margin-top: 20px;
     }
-    p {
-      color: #00796b;
-      font-size: 18px;
-      margin: 20px auto;
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      border-radius: 10px;
+    .hero-text p {
+      margin: 20px 0;
+      line-height: 1.6;
     }
-    .button {
+    .hero-text .button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #007bff;
+      padding: 12px 24px;
+      background: var(--color-primary);
       color: white;
       text-decoration: none;
-      font-size: 20px;
-      border-radius: 10px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.3s;
     }
-    .button:hover {
-      background-color: #0056b3;
-      transform: scale(1.05);
+    .hero-text .button:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
     }
-    .footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #555;
+    .hero-image {
+      flex: 1 1 300px;
+      background: url('https://imillanmendez.github.io/asistente-jk-simblast/fondo.jpg') no-repeat center center;
+      background-size: contain;
+      min-height: 300px;
     }
-
-    /* Estilos para la caja de feedback */
     .feedback {
       position: absolute;
-      bottom: 30px;
-      left: 30px;
-      width: 350px;
-      background: rgba(255, 255, 255, 0.9);
+      bottom: 20px;
+      left: 20px;
+      width: 300px;
+      background: white;
       padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      font-size: 0.9rem;
       text-align: left;
     }
     .feedback h2 {
-      margin-top: 0;
-      font-size: 22px;
-      color: #004d40;
-    }
-    .feedback p {
-      margin: 10px 0;
-      max-width: none;
+      margin-bottom: 8px;
+      color: var(--color-accent);
     }
     .feedback iframe {
       width: 100%;
-      height: 250px;
+      height: 200px;
       border: none;
       border-radius: 6px;
     }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #666;
+      background: var(--color-bg);
+    }
   </style>
 
-  <!-- Microsoft Clarity tracking script -->
+  <!-- Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -100,29 +122,33 @@
 </head>
 <body>
 
-  <h1>Bienvenido al Asistente JK Simblast</h1>
+  <div class="container">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Bienvenido al Asistente JK Simblast</h1>
+        <h2>¿Qué aprenderás aquí?</h2>
+        <p>
+          Este asistente te guía paso a paso en 2D Bench (cielo abierto) y 2D Face (mina subterránea). Resuelve tus dudas, interpreta resultados y mejora tus diseños de tronadura.
+        </p>
+        <a href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast"
+           target="_blank" class="button">
+          Acceder al Asistente
+        </a>
+      </div>
+      <div class="hero-image"></div>
+    </div>
 
-  <h2>¿Qué aprenderás aquí?</h2>
-  <p>
-    Este asistente te ayudará a comprender y utilizar correctamente los módulos 2D Bench (cielo abierto) y 2D Face (mina subterránea) de JK Simblast.
-    Podrás resolver dudas técnicas, recibir guías paso a paso, y acceder a explicaciones de conceptos clave de voladuras y diseños de tronadura.
-  </p>
-
-  <a href="https://chatgpt.com/g/g-680c5c32ee748191ab474f9452a9444f-asistente-jk-simblast" target="_blank" class="button">
-    Acceder al Asistente
-  </a>
-
-  <!-- Caja de feedback en la esquina inferior izquierda -->
-  <div class="feedback">
-    <h2>Tu feedback</h2>
-    <p>Tu opinión es muy valiosa para seguir mejorando:</p>
-    <iframe 
-      src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u" 
-      allowfullscreen>
-    </iframe>
+    <div class="feedback">
+      <h2>Tu feedback</h2>
+      <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=oeChOLG26UKzqVl2JmcLF3TXpU8vpUBMh7H9x1vAakhURDE4TUZDN0Y1NThPQTJDNEUxVjNRSTdFVy4u"
+              allowfullscreen>
+      </iframe>
+    </div>
   </div>
 
-  <p class="footer">Creado por Ignacio Millán – Especialista en Minería y Educación Digital</p>
+  <div class="footer">
+    Creado por Ignacio Millán – Especialista en Minería y Educación Digital
+  </div>
 
 </body>
 </html>
